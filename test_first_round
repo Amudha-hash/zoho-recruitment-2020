@@ -1,40 +1,38 @@
 #include<stdio.h>
 #include<string.h>
 #include<conio.h>
+int main()
+{
+	char str[] = "welcome";
+	int len = strlen(str);
+	int cen = len / 2;
+	int k = cen;
 
-	int main()
-	{
-		char str[] = "welcome";
-		int len = strlen(str);
-
-		int cen = len / 2;
-		int k = cen;
-		
-		for (int i = len; i > 0 && i <= len; i--) {
-			k = cen - 1;
-			for (int j = 1; j <= len; j++) {
+	for (int i = len; i > 0 && i <= len; i--) {
+		k = cen - 1;
+		for (int j = 1; j <= len; j++) {
+			printf(" ");
+		}
+		for (int j = 1; j <= len; j++) {
+			if (i > j) {
 				printf(" ");
 			}
-			for (int j = 1; j <= len; j++) {
-				if (i > j) {
-					printf(" ");
+			else {
+				k++;
+				if (k >= len) {
+					k = 0;
 				}
-				else {
-					k++;
-					if (k >= len) {
-						k = 0;
-					}
-					//printf("%d---", k);
-					printf("%c", str[k]);
-				}
+				//printf("%d---", k);
+				printf("%c", str[k]);
+			}
 
-			}
-			if (k >= len) {
-				k = -1;
-			}
-			k++;
-			printf("\n");
 		}
+		if (k >= len) {
+			k = -1;
+		}
+		k++;
+		printf("\n");
+	}
 }
 
 	
